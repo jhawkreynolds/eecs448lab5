@@ -1,0 +1,45 @@
+<html> 
+    <head> 
+        <title> Can I Check Your ID? </title> 
+    </head> 
+ 
+    <body>
+        <button onclick="validate('lol','rekt')"> 
+        <script>
+function validate(password, confirmPassword)
+{
+    if(passwordsMatch(password, confirmPassword))
+    {
+        if(password.length < 8)
+        {
+            alert("Passwords need to be at least eight characters.\n");
+        }
+        else
+        {
+            alert("All good, welcome!\n");
+        }
+    }
+    else
+    {
+        alert("Passwords do not match!\n");
+    }
+} 
+
+function passwordsMatch(password, confirmPassword)
+{
+    if(password.length != confirmPassword.length)
+    {
+        return false;
+    }
+    for(let i = 0; i < password.length; i++)
+    {
+        if(password.at(i) != confirmPassword.at(i))
+        {
+            return false;
+        }
+    }
+    return true;
+}
+        </script>
+    </body> 
+</html> 
