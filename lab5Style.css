@@ -1,0 +1,31 @@
+/* Courtesy of w3Schools */
+.column {
+    float: left;
+    width: 50%;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+
+body 
+{ 
+    background-color: lightsteelblue; 
+} 
+
+h1 
+{ 
+    color: hotpink;
+    font-family: verdana;
+    font-size: 30pt; 
+}
+
+p
+{ 
+    font-family: verdana; 
+    font-size: 18pt; 
+}
+
