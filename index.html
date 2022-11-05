@@ -12,9 +12,71 @@
         <button onclick="previousSection()">Previous</button><button onclick="nextSection()">Next</button> 
         <div id="sections">
             <div id="section1">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Eagle_nebula_pillars.jpg/1200px-Eagle_nebula_pillars.jpg"
+                <img length="200" width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Eagle_nebula_pillars.jpg/1200px-Eagle_nebula_pillars.jpg">
             </div>
+            <div id="section2">
+                <img length="200" width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/M74_Galaxy_JWST_MIRI.tif/lossy-page1-1200px-M74_Galaxy_JWST_MIRI.tif.jpg">
+            </div>
+            <div id="section3">
+                <img length="200" width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Eagle_nebula_pillars.jpg/1200px-Eagle_nebula_pillars.jpg">
+            </div>
+            <div id="section4">
+                <img length="200" width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Eagle_nebula_pillars.jpg/1200px-Eagle_nebula_pillars.jpg">
+            </div>
+            <div id="section5">
+                <img length="200" width="200" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Eagle_nebula_pillars.jpg/1200px-Eagle_nebula_pillars.jpg">
+            </div>
+        </div>
         <script>
+var sectionString = "section";
+var currentPosition = 1;
+var sectionSize = 5;
+var path = document.getElementById(sectionString);
+hide();
+
+function previousSection()
+{
+    if(currentPosition == 1)
+    {
+        currentPosition = sectionSize;
+    }
+    else
+    {
+        currentPosition -= 1;
+    }
+    hide();
+}
+
+function nextSection()
+{
+    if(currentPosition == sectionSize)
+    {
+        currentPosition = 1;
+    }
+    else
+    {
+        currentPosition += 1;
+    }
+    hide();
+}
+
+function hide()
+{
+    let sectionToBeHidden;
+    for(let i = 1; i <= sectionSize; i++)
+    {
+        sectionToBeHidden = sectionString + i;
+        selectedSection = document.getElementById(sectionToBeHidden);
+        if(currentPosition == i)
+        {
+            selectedSection.style.visibility = "visible";
+        }
+        else
+        {
+            selectedSection.style.visibility = "hidden";
+        }
+    }
+}
         </script>
     </body> 
 </html> 
