@@ -1,63 +1,20 @@
-<!-- EECS 448 Lab 5, Part 1 
+<!-- EECS 448 Lab 5, Part 2 
     author: Jack Reynolds
     written: 4 November 2022
     using: HTML and JavaScript
 -->
 <html> 
     <head> 
-        <title> Can I Check Your ID? </title> 
+        <title> Presentation Situation </title> 
     </head> 
  
     <body>
-        <!--    Here we have our inputs to the code! -->
-        <!--    The "Password" and "Confirm Password" fields are HTML text inputs, 
-                which have id attributes so we can easily find them with JavaScript.
-                Below is an button element, that calls as an event the function 
-                validate() in the HTML script element. -->
-        <p>
-            Password:
-            <input type="text" id="box1"> 
-        </p>
-        <p>
-            Confirm Password:
-            <input type="text" id="box2">
-        </p>
-        <button onclick="validate()">Validate</button> 
+        <button onclick="previousSection()">Previous</button><button onclick="nextSection()">Next</button> 
+        <div id="sections">
+            <div id="section1">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Eagle_nebula_pillars.jpg/1200px-Eagle_nebula_pillars.jpg"
+            </div>
         <script>
-//  The function validate() is the entrypoint to this script.
-//  This function manages user feedback on the password entries,
-//  checking the two conditions of:
-//  1) The two password entries match
-//  2) The password length is 8 or more characters
-//  To do so, this function calls fetchPasswords().
-function validate()
-{
-    let passwords = fetchPasswords();
-    if(passwords[0] == passwords[1])    //  Are the entries the same?
-    {
-        if(passwords[0].length < 8)     //  Is the password less than eight characters?
-        {
-            alert("Passwords need to be at least eight characters.\n");
-        }
-        else    //  If not:
-        {
-            alert("All good, welcome!\n");
-        }
-    }
-    else    //  If not:
-    {
-        alert("Passwords do not match!\n");
-    }
-}
-
-//  This function pulls the values of the two text boxes
-//  from the DOM using getElementById().
-function fetchPasswords()
-{
-    password = document.getElementById("box1").value;
-    confirmPassword = document.getElementById("box2").value;
-    return([password, confirmPassword]);
-}
         </script>
     </body> 
 </html> 
