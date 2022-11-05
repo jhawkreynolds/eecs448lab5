@@ -11,21 +11,27 @@
     clear: both;
   }
 
-body 
+body.tofupupper 
 { 
     background-color: lightsteelblue; 
 } 
 
-h1 
+h1.tofupupper 
 { 
     color: hotpink;
     font-family: verdana;
     font-size: 30pt; 
 }
 
-p
+p.tofupupper
 { 
     font-family: verdana; 
-    font-size: 18pt; 
+    font-size: 14pt; 
+}
+
+p.tofupupper_small
+{ 
+    font-family: verdana; 
+    font-size: 10pt; 
 }
 
