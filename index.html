@@ -4,13 +4,28 @@
     </head> 
  
     <body>
-        <button onclick="validate('lol','rekt')"> 
+        <p>
+            Password:
+            <input type="text" id="box1">
+        </p>
+        <p>
+            Confirm Password:
+            <input type="text" id="box2">
+        </p>
+        <button onclick="validate('lol','lol')">Validate</button> 
         <script>
-function validate(password, confirmPassword)
+function fetchPasswords()
 {
-    if(passwordsMatch(password, confirmPassword))
+    password = document.getElementById("box1").value;
+    confirmPassword = document.getElementById("box2").value;
+    return([password, confirmPassword]);
+}
+function validate()
+{
+    let passwords = fetchPasswords();
+    if(passwordsMatch(passwords[0], passwords[1]))
     {
-        if(password.length < 8)
+        if(passwords[0].length < 8)
         {
             alert("Passwords need to be at least eight characters.\n");
         }
