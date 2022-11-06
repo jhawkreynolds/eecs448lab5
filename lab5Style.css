@@ -1,3 +1,29 @@
+/*lab5style.css*/
+/*author: Jack Reynolds*/
+/*written: 6 November 2022*/
+
+/*INDEX STYLING BELOW*/
+
+body.landing 
+{ 
+    background-color: lightsteelblue; 
+} 
+
+h1.landing
+{
+    color: purple;
+    font-family: verdana;
+    font-size: 30pt; 
+}
+
+p.landing
+{
+    font-family: verdana;
+    font-size: 14pt; 
+}
+
+/*PART 3 STYLING BELOW*/
+
 /* Courtesy of w3Schools */
 .column {
     float: left;

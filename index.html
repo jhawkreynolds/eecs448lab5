@@ -5,76 +5,23 @@
 -->
 <html> 
     <head> 
-        <title> Color Changing Contraption </title> 
+        <title> Super Spectatular Landing Page </title> 
         <link href="lab5Style.css" 
             rel="stylesheet" 
             type="text/css"/>
     </head> 
-    <body>
-    <p id="colorfulText"><i>
-        You are under no obligation to remain the same person<br>
-        you were a year ago, a month ago, or even a day ago.<br>
-        You are here to create yourself, continuously.<br>
-    </i></p>
-    <h2>Border</h2>
-    <p><input type="text" id="borderRed"> Red value (00-FF)</p>
-    <p><input type="text" id="borderGreen"> Green value (00-FF)</p>
-    <p><input type="text" id="borderBlue"> Blue value (00-FF)</p>
-    <p><input type="text" id="borderWidth"> Width</p>
-    <h2>Background</h2>
-    <p><input type="text" id="backgroundRed"> Red value (00-FF)</p>
-    <p><input type="text" id="backgroundGreen"> Green value (00-FF)</p>
-    <p><input type="text" id="backgroundBlue"> Blue value (00-FF)</p>
-    <h2>Test it out</h2>
-    <button onclick="colorify()"><i>colorify</i></button>
-        <script>
-//background-color:rgb(255,0,0);
-function colorify()
-{
-    let colorfulText = document.getElementById("colorfulText");
-    let borderColors = fetchBorderColors();
-    let borderWidth = fetchBorderWidth();
-    let backgroundColors = fetchBackgroundColors();
-
-    if(borderWidth != "0")
-    {
-        colorfulText.style.borderStyle = "solid";
-        colorfulText.style.borderWidth = borderWidth + "px";
-        let borderHex = borderColors[0] + borderColors[1] + borderColors[2];
-        colorfulText.style.borderColor = borderHex;
-        
-    }
-    else
-    {
-        colorfulText.style.borderStyle = "none";
-    }
-    let backgroundHex = backgroundColors[0] + backgroundColors[1] + backgroundColors[2];
-    colorfulText.style.backgroundColor = backgroundHex;
-    
-    
-}
-
-function fetchBorderColors()
-{
-    let borderRed = document.getElementById("borderRed").value;
-    let borderGreen = document.getElementById("borderGreen").value;
-    let borderBlue = document.getElementById("borderBlue").value;
-    return([borderRed, borderGreen, borderBlue]);
-}
-
-function fetchBorderWidth()
-{
-    let borderWidth = document.getElementById("borderWidth").value;
-    return(borderWidth);
-}
-
-function fetchBackgroundColors()
-{
-    let backgroundRed = document.getElementById("backgroundRed").value;
-    let backgroundGreen = document.getElementById("backgroundGreen").value;
-    let backgroundBlue = document.getElementById("backgroundBlue").value;
-    return([backgroundRed, backgroundGreen, backgroundBlue]); 
-}
-        </script>
+    <body class="landing">
+    <h1 class="landing">Welcome to my <i><strong>Super Spectatular Landing Page</strong></i>!</h1>
+    <p class="landing">
+    Here you can access a variety of different activities,<br>
+    specially made for this web programming assignment!<br>
+    Use the links below to navigate to:
+    </p>
+    <p class="landing">
+    <a href="eecs448_lab5part1_jackreynolds.html">>> Log in here!</a><br>
+    <a href="eecs448_lab5part2_jackreynolds.html">>> Check out a presentation!</a><br>
+    <a href="eecs448_lab5part3_jackreynolds.html">>> Check out this cool profile page!</a><br>
+    <a href="eecs448_lab5part4_jackreynolds.html">>> Test out some color palettes!</a><br>
+    </p>
     </body> 
 </html> 
