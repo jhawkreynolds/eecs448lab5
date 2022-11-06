@@ -1,6 +1,6 @@
 <!-- EECS 448 Lab 5, Part 2 
     author: Jack Reynolds
-    written: 5 November 2022
+    written: 6 November 2022
     using: HTML and JavaScript
 -->
 <html> 
@@ -9,9 +9,12 @@
     </head> 
  
     <body>
+        <!--    Here we have the code buttons that access
+                the functions that increment backward and forward! -->
         <button onclick="previousSection()">Previous</button><button onclick="nextSection()">Next</button> 
         <div id="sections">
             <div id="section1">
+                <!-- All images used in this section are sourced from Wikipedia! -->
                 <img height="500" width="500" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/M104_ngc4594_sombrero_galaxy_hi-res.jpg/1200px-M104_ngc4594_sombrero_galaxy_hi-res.jpg">
             </div>
             <div id="section2">
@@ -29,14 +32,23 @@
         </div>
         <a href="index.html">Go back</a><br>
         <script>
-var sectionString = "section";
-var currentPosition = 1;
+//  The three parameters sectionString, currentPosition, and sectionSize
+//  are globally accessible parameters that are used by the functions
+//  previousSection() and nextSection() to track progress through the code.
+//  If this was to be implemented as an interactive HTML element
+//  that might be used several times on one page,
+//  you would want to convert this to a class and have
+//  these as attributes of said class to limit coupling with global data. 
+var name = "section";
+var currentPosition = 1;    //  Default is the first slide
 var sectionSize = 5;
-var path = document.getElementById(sectionString);
+//  We run the function hide() on page load to hide the elements
+//  that should not be displayed!
 hide();
 
 function previousSection()
 {
+    //  This is the special case where we need to wrap around.
     if(currentPosition == 1)
     {
         currentPosition = sectionSize;
@@ -50,6 +62,7 @@ function previousSection()
 
 function nextSection()
 {
+    //  This is the special case where we need to wrap around.
     if(currentPosition == sectionSize)
     {
         currentPosition = 1;
@@ -61,20 +74,28 @@ function nextSection()
     hide();
 }
 
+//  hide() is a void function that is called by
+//  previousSection() and nextSection() in their use.
+//  It uses whatever the currentPosition variable is set as
+//  to decide whether a given slide needs to be shown or hidden.
 function hide()
 {
     let sectionToBeHidden;
     for(let i = 1; i <= sectionSize; i++)
     {
-        sectionToBeHidden = sectionString + i;
+        //  We look up the section using the tag name + i,
+        //  where in a larger implementation the name would be
+        //  the name of the section for which
+        //  we would index its slides with numbers.
+        sectionToBeHidden = name + i;
         selectedSection = document.getElementById(sectionToBeHidden);
-        if(currentPosition == i)
+        if(currentPosition == i)                    //  We want to show the current slide
         {
-            selectedSection.style.display = "";
+            selectedSection.style.display = "";     //  Resets display attribute
         }
         else
         {
-            selectedSection.style.display = "none";
+            selectedSection.style.display = "none"; //  Sets display attribute to not show or make space for image
         }
     }
 }

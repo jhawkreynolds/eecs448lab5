@@ -1,7 +1,7 @@
 <!-- EECS 448 Lab 5, Part 4 
     author: Jack Reynolds
-    written: 5 November 2022
-    using: CSS and HTML
+    written: 6 November 2022
+    using: CSS, HTML, and Javascript
 -->
 <html> 
     <head> 
@@ -29,7 +29,13 @@
     <button onclick="colorify()"><i>colorify</i></button>
     <a href="index.html">Go back</a><br>
         <script>
-//background-color:rgb(255,0,0);
+//  The function colorify is called by the user with the button.
+//  It has helper fetch functions that gather the values from the textboxes,
+//  sometimes editing a value to set to a default value.
+//  If the border width set by the user is not 0 or empty,
+//  a border is created and colored with the color specified by the user.
+//  Otherwise, the border style is set to none.
+//  In both cases, the background is updated to the color specified by the user.
 function colorify()
 {
     let colorfulText = document.getElementById("colorfulText");
@@ -50,11 +56,13 @@ function colorify()
         colorfulText.style.borderStyle = "none";
     }
     let backgroundHex = backgroundColors[0] + backgroundColors[1] + backgroundColors[2];
-    colorfulText.style.backgroundColor = backgroundHex;
-    
-    
+    colorfulText.style.backgroundColor = backgroundHex;    
 }
 
+//  fetchBorderColors is a void function
+//  that returns the RGB values
+//  entered by the user
+//  in the form of an array.
 function fetchBorderColors()
 {
     let borderRed = document.getElementById("borderRed").value;
@@ -63,12 +71,25 @@ function fetchBorderColors()
     return([borderRed, borderGreen, borderBlue]);
 }
 
+//  fetchBorderWidth is a void function
+//  that returns the width value
+//  entered by the user.
+//  If the field is left blank,
+//  a default value of 0 is set instead.
 function fetchBorderWidth()
 {
     let borderWidth = document.getElementById("borderWidth").value;
+    if(borderWidth.length == 0)
+    {
+        borderWidth = "0";
+    }
     return(borderWidth);
 }
 
+//  fetchBackgroundColors is a void function
+//  that returns the RGB values
+//  entered by the user
+//  in the form of an array.
 function fetchBackgroundColors()
 {
     let backgroundRed = document.getElementById("backgroundRed").value;
